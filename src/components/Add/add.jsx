@@ -14,7 +14,7 @@
   
     const fetchtodo = async () => {
       try {
-        const response = await axios.get("todoback-production-08e7.up.railway.app/api/eventdata");
+        const response = await axios.get("https://todoback-production-08e7.up.railway.app/api/eventdata");
         setEvents(response.data);
       } catch {
         console.log("Error fetching events");
@@ -24,7 +24,7 @@
 
     const addtodo = async () => {
       try {
-       const response =  await axios.post("todoback-production-08e7.up.railway.app/api/eventdata", {
+       const response =  await axios.post("https://todoback-production-08e7.up.railway.app/api/eventdata", {
           eventName,
           eventData,
         });
@@ -42,7 +42,7 @@
     
     const updatetodo = async (id, updatedName, updatedData) => {
       try {
-        const response = await axios.put(`todoback-production-08e7.up.railway.app/api/eventdata/${id}`, {
+        const response = await axios.put(`https://todoback-production-08e7.up.railway.app/api/eventdata/${id}`, {
           eventName: updatedName,
           eventData: updatedData
         });
@@ -68,7 +68,7 @@
 
     const deletetodo = async () => {
       try {
-        await axios.post("todoback-production-08e7.up.railway.app/api/eventdata/delete", {
+        await axios.post("https://todoback-production-08e7.up.railway.app/api/eventdata/delete", {
           ids: selectedEvents,
         });
   
